@@ -51,6 +51,25 @@ app.post('/api/notes', (req, res) => {
     });
 });
 
-// app.delete('/api/notes', (req, res) => {
+app.delete('/api/notes/:id', (req, res) => {
+    fs.readFile('./db/db.json', (err, data) => {
+        if(err) throw err;
+        let holdNotes = JSON.parse(data);
+        // console.log(holdNotes[0]);
+        // console.log(req.params.id);
+        let indexToRemove = 0;
 
-// });
+        for(let i = 0; i < holdNotes.length; i++){
+            if (holdNotes[i].id == req.params.id) {
+                indexToRemove = i;
+            };
+        };
+
+        holdNotes.splice(indexToRemove,1);
+
+        fs.writeFile('./db/db.json', JSON.stringify(holdNotes), (err) => {
+            if(err) throw err;
+            res.json(holdNotes);
+        });
+    })
+});
