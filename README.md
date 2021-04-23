@@ -44,6 +44,8 @@ app.post('/api/notes', (req, res) => {
 ```
 This portion of code is a "solution" to saving notes into a json file. With a limited knowledge of how to read a json file type, this code portion reads stored notes through `'fs'`, parses the data and pushes a new note into the array of objects, and writes the data back into the json file through `'fs'` again. I don't consider this the most ellegant solution but a solution none the less. *Sorry future Mark if you see this.*
 
+UUID provides all notes with a unique id. Without this module, creating a unique id would be much more complicated.
+
 ---
 
 ## Contact
