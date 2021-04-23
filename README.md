@@ -6,6 +6,8 @@ Visit the [Application](https://mighty-dusk-98751.herokuapp.com/) here.
 ## Usage
 
 
+## Lessons Learned
+
 ---
 
 ## Contact
